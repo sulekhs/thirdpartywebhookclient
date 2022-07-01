@@ -55,6 +55,12 @@ const UpdateRechargeComponent = (prop: RechargeData) => {
                 <Box sx={{ display:'flex', flexDirection:'row', justifyContent:"center" }} >
                     <Box mr={3} >
                         <Button 
+                           sx={{
+                            "&:disabled":{
+                                cursor: "not-allowed"
+                            }
+                           }}
+                           disabled={prop.data.status === 1}
                            variant='contained'
                            onClick={() => handleClick(prop.data.rechargeId)}
                         >
